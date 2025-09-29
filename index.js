@@ -23,6 +23,19 @@ app.post('/api/users', (req, res) => {
   res.json({ message: 'User created', data: newUser });
 });
 
+// Route PUT example 
+app.put('/api/users/:id', (req, res) => {
+  const id = req.params.id;
+  const updatedUser = req.body;
+  res.json({ message: `User ${id} updated`, data: updatedUser });
+});
+
+// Route DELETE example 
+app.delete('/api/users/:id', (req, res) => {
+  const id = req.params.id;
+  res.json({ message: `User ${id} deleted` });
+});
+
 // Chạy server
 const PORT = 3000;
 app.listen(PORT, () => {
